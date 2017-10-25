@@ -1,7 +1,7 @@
 # Pre-req
 # sudo adduser gitea --home /opt/gitea
-# sudo mkdir -p /srv/gitea/ /opt/gitea/ /var/log/gitea
-# sudo chown -R gitea:gitea /srv/gitea/ /opt/gitea/ /var/log/gitea
+# sudo mkdir -p /opt/gitea/ /var/log/gitea
+# sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 [Unit]
 Description=Gitea - Git with a cup of tea. A painless self-hosted Git service.
@@ -40,14 +40,14 @@ PrivateDevices=true
 ProtectHome=true
 # Make /usr, /boot, /etc and possibly some more folders read-only.
 ProtectSystem=full
-# ... except /srv/gitea because we want a place for the database
+# ... except /opt/gitea because we want a place for the database
 # and /var/log/gitea because we want a place where logs can go.
 # This merely retains r/w access rights, it does not add any new.
 # Must still be writable on the host!
-ReadWriteDirectories=/srv/gitea /opt/gitea /var/log/gitea
+ReadWriteDirectories=/opt/gitea /var/log/gitea
 
 # Note: in v231 and above ReadWritePaths has been renamed to ReadWriteDirectories
-; ReadWritePaths=/srv/gitea /opt/gitea /var/log/gitea
+; ReadWritePaths=/opt/gitea /var/log/gitea
 
 # The following additional security directives only work with systemd v229 or later.
 # They further retrict privileges that can be gained by gitea.

@@ -11,8 +11,8 @@ Just follow these instructions:
 sudo adduser gitea --home /opt/gitea
 
 # Make some other potentially useful directories for that user/group
-sudo mkdir -p /opt/gitea/ /var/log/gitea /srv/gitea
-sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea /srv/gitea
+sudo mkdir -p /opt/gitea/ /var/log/gitea
+sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
 sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-amd64
