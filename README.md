@@ -30,3 +30,42 @@ sudo systemctl restart gitea
 ## Error 226/Namespace
 
 Most likely a directory that is supposed to be writable doesn't exist.
+
+## Failed to get repository owner (foobar): no such table: user
+
+Your `custom/conf/app.ini` has a line like this:
+
+```
+[database]
+DB_TYPE = sqlite3
+PATH = data/gogs.db
+```
+
+And it should probably look like this instead:
+
+```
+[database]
+DB_TYPE = sqlite3
+PATH = /opt/gitea/data/gitea.db
+```
+
+## Gitea: Invalid key ID
+
+```
+Gitea: Invalid key ID
+Invalid key ID[key-2]: public key does not exist [id: 2]
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+```
+
+You are connecting to gitea with a different ssh key (usually `id_rsa.pub`)
+than the one you uploaded. You can usually fix this by uploading your default key
+or by manually specifying which key to use, for example:
+
+`~/.ssh/config`:
+```
+Host git.example.com
+  User gitea
+  IdentityFile ~/.ssh/id_rsa
+```
