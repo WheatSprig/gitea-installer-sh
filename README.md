@@ -38,7 +38,7 @@ Your `custom/conf/app.ini` has a line like this:
 ```
 [database]
 DB_TYPE = sqlite3
-PATH = data/gogs.db
+PATH = data/gitea.db
 ```
 
 And it should probably look like this instead:
