@@ -69,3 +69,18 @@ Host git.example.com
   User gitea
   IdentityFile ~/.ssh/id_rsa
 ```
+
+## Expect user 'foobar' but current user is: gitea
+
+```
+remote: 2017/10/25 23:53:10 [...s/setting/setting.go:625 NewContext()] [E] Expect user 'aj' but current user is: gitea
+remote: error: hook declined to update refs/heads/master
+To ssh://git.coolaj86.com:22042/coolaj86/hexdump.js.git
+ ! [remote rejected] master -> master (hook declined)
+error: failed to push some refs to 'ssh://gitea@git.coolaj86.com:22042/coolaj86/hexdump.js.git'
+```
+
+If you copied a previous installation of gitea over to a new user, you may get this error.
+
+I haven't yet found where it comes from, but deleting the repository in the UI and re-adding it seems to do the trick
+from what I can tell. Remember to `git fetch --all` first before deleting.
