@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
+
 # wget -O - https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash | bash
 
 # Create a 'gitea' user and group with the home /opt/gitea
@@ -18,3 +20,5 @@ sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86
 
 # Start gitea
 sudo systemctl restart gitea
+
+echo "Please visit http://localhost:3000/ now to finish installing gitea"
