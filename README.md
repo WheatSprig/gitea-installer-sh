@@ -2,7 +2,7 @@
 
 Installs Gitea as a systemd service
 
-# Linux
+## Linux Install Script
 
 You can download and run the installer script:
 
@@ -31,6 +31,13 @@ sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86
 # Start gitea
 sudo systemctl restart gitea
 ```
+
+## Gitea Web Setup (post install)
+
+Once you've gitea installed and running you must choose
+which database to use, certain gitea paths, an admin user, etc.
+
+> http://localhost:3000/
 
 # Troubleshooting
 
@@ -106,4 +113,6 @@ Try this:
 
 ```bash
 sudo chmod +x /opt/gitea/gitea
+
+sudo systemctl restart gitea
 ```
