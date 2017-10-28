@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
-
+# or
 # wget -O - https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash | bash
 
-# Create a 'gitea' user and group with the home /opt/gitea
-sudo adduser gitea --home /opt/gitea
+# Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
+sudo adduser gitea --home /opt/gitea --disabled-password --gecos ''
 
 # Make some other potentially useful directories for that user/group
 sudo mkdir -p /opt/gitea/ /var/log/gitea
