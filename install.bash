@@ -13,7 +13,7 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
 sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-amd64
-sudo chmod +x gitea
+sudo chmod +x /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
 sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/dist/etc/systemd/system/gitea.service
