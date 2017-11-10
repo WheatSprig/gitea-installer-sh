@@ -26,7 +26,7 @@ sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-
 sudo chmod +x /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
-sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/dist/etc/systemd/system/gitea.service
+sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl restart gitea
@@ -119,4 +119,4 @@ sudo systemctl restart gitea
 
 **But wait, there's more!**
 
-This could also be due to missing `rx` permissions on a parent directory of the executable file, which could be the result of having an existing but empty `/etc/tmpfiles.d/gitea.conf` (it will default to and change the permissions of `/` if it is empty).
+This could also be due to missing `rx` permissions on a parent directory of the executable file, which could be the result of having an existing but empty `/etc/tmpfiles.d/gitea.conf` (a necessary tmp folder not being generated on boot).
