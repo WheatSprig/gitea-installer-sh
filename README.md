@@ -7,7 +7,7 @@ Installs Gitea as a systemd service
 You can download and run the installer script:
 
 ```bash
-wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash
+wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/install.bash
 bash install-gitea.bash
 ```
 
@@ -116,3 +116,7 @@ sudo chmod +x /opt/gitea/gitea
 
 sudo systemctl restart gitea
 ```
+
+**But wait, there's more!**
+
+This could also be due to missing `rx` permissions on a parent directory of the executable file, which could be the result of having an existing but empty `/etc/tmpfiles.d/gitea.conf` (it will default to and change the permissions of `/` if it is empty).
