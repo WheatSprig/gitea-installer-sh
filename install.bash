@@ -16,7 +16,7 @@ sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-
 sudo chmod +x /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
-sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/dist/etc/systemd/system/gitea.service
+sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl restart gitea
