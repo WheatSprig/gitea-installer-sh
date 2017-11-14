@@ -1,0 +1,35 @@
+tcp:
+  bind:
+    - 80
+    - 443
+  modules:
+    - type: proxy
+      domains:
+        - ssh.git.example.com
+      port: 22
+
+tls:
+  modules:
+    - type: acme
+      domains:
+        - git.example.com
+        - ssh.git.example.com
+      email: john.doe@example.com
+      server: 'https://acme-v01.api.letsencrypt.org/directory'
+      challenge_type: 'http-01'
+
+http:
+  trust_proxy: true
+  allow_insecure: false
+  primary_domain: example.com
+  modules:
+    - type: proxy
+      domains:
+        - git.example.com
+      port: 3000
+
+mdns:
+  disabled: true
+
+socks5:
+  enabled: false
