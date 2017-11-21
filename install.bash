@@ -12,7 +12,13 @@ sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
-sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-amd64
+my_os=linux
+my_arch=amd64
+sys_arch="$(uname -m)"
+if [ $(echo $sys_arch | grep arm7) ]; then
+  my_arch=arm-7
+fi
+sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-$my_os-$my_arch
 sudo chmod +x /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
