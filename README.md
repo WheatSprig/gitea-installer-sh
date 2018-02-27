@@ -1,6 +1,6 @@
 # Gitea Installer
 
-Installs Gitea as a systemd service
+Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
 
 ## Linux Install Script
 
