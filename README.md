@@ -70,6 +70,30 @@ You can find more information about customization and templates in the docs and 
 * https://docs.gitea.io/en-us/customizing-gitea/
 * https://github.com/go-gitea/gitea/tree/master/templates/
 
+
+**Note to self**:
+
+All of my custom files
+
+```
+/opt/gitea/custom/
+|-- conf
+|   `-- app.ini
+|-- options
+|   `-- locale
+|       `-- locale_en-US.ini              # changed app_desc
+|-- public
+|   `-- img
+|       |-- coolaj86-logo.png
+|       |-- favicon.ico -> favicon.png
+|       |-- favicon.png
+|       |-- gitea-lg.png
+|       `-- gitea-sm.png
+`-- templates
+    |-- base
+    |   `-- head.tmpl                     # Added github login
+    `-- home.tmpl                         # changed welcome page
+```
 # Troubleshooting systemd
 
 See [Troubleshooting systemd](https://git.coolaj86.com/coolaj86/service-installer.sh/src/master/README.md#troubleshooting-systemd)
