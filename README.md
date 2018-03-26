@@ -39,6 +39,14 @@ which database to use, certain gitea paths, an admin user, etc.
 
 > http://localhost:3000/
 
+## Customize Gitea
+
+```
+/opt/gitea/custom/conf/app.ini
+
+https://github.com/go-gitea/gitea/tree/master/custom/conf/app.ini.sample
+```
+
 ## Customize Gitea Theme
 
 All overrides to the existing theme can be placed in the `custom/public` and `custom/templates` folders.
@@ -47,10 +55,15 @@ All overrides to the existing theme can be placed in the `custom/public` and `cu
 ```
 /opt/gitea/custom/public
 /opt/gitea/custom/templates
+
+/opt/gitea/custom/public/img/favicon.png     # 16x16 logo in tab
+/opt/gitea/custom/public/img/gitea-sm.png    # 120x120 logo on all pages
+/opt/gitea/custom/public/img/gitea-sm.png    # 880x880 logo on landing page
+
+/opt/gitea/custom/templates/home.tmpl        # The landing page
 ```
 
 For many items, such as the logo, you can simply right-click "inspect" to discover the location. For example, the small logo is `/img/gitea-sm.png` or `/opt/gitea/custom/public/img/gitea-sm.png`.
-
 
 You can find more information about customization and templates in the docs and on github:
 
