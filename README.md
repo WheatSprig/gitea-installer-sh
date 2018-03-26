@@ -39,6 +39,24 @@ which database to use, certain gitea paths, an admin user, etc.
 
 > http://localhost:3000/
 
+## Customize Gitea Theme
+
+All overrides to the existing theme can be placed in the `custom/public` and `custom/templates` folders.
+
+
+```
+/opt/gitea/custom/public
+/opt/gitea/custom/templates
+```
+
+For many items, such as the logo, you can simply right-click "inspect" to discover the location. For example, the small logo is `/img/gitea-sm.png` or `/opt/gitea/custom/public/img/gitea-sm.png`.
+
+
+You can find more information about customization and templates in the docs and on github:
+
+* https://docs.gitea.io/en-us/customizing-gitea/
+* https://github.com/go-gitea/gitea/tree/master/templates/
+
 # Troubleshooting systemd
 
 See [Troubleshooting systemd](https://git.coolaj86.com/coolaj86/service-installer.sh/src/master/README.md#troubleshooting-systemd)
