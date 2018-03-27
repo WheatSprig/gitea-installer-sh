@@ -51,6 +51,10 @@ https://github.com/go-gitea/gitea/tree/master/custom/conf/app.ini.sample
 
 All overrides to the existing theme can be placed in the `custom/public` and `custom/templates` folders.
 
+* Change Logo
+* Change Landing Page
+* Google Analytics
+
 
 ```
 /opt/gitea/custom/public
@@ -61,6 +65,7 @@ All overrides to the existing theme can be placed in the `custom/public` and `cu
 /opt/gitea/custom/public/img/gitea-sm.png    # 880x880 logo on landing page
 
 /opt/gitea/custom/templates/home.tmpl        # The landing page
+/opt/gitea/custom/templates/base/head.tmpl   # Google Analytics
 ```
 
 For many items, such as the logo, you can simply right-click "inspect" to discover the location. For example, the small logo is `/img/gitea-sm.png` or `/opt/gitea/custom/public/img/gitea-sm.png`.
