@@ -23,8 +23,14 @@ ln -sf gitea-$VER /opt/gitea/gitea
 sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
-sudo systemctl restart gitea
 sudo systemctl enable gitea
+
+## If this is performing an upgrade it may need extra ram for a limited time
+# fallocate -l 1G /tmp.swap
+# mkswap /tmp.swap
+# chmod 0600 /tmp.swap
+# swapon /tmp.swap
+sudo systemctl restart gitea
 
 echo ""
 echo "Please visit http://localhost:3000/ now to finish installing gitea"
@@ -32,3 +38,7 @@ echo ""
 echo "You may customize gitea"
 echo "    templates can be seen at https://github.com/go-gitea/gitea/tree/v$VER/templates"
 echo "    app.ini.sample can be seen at https://github.com/go-gitea/gitea/blob/v$VER/custom/conf/app.ini.sample"
+
+# sleep 5
+# swapoff /tmp.swap
+# rm /tmp.swap
