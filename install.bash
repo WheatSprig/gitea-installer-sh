@@ -14,14 +14,17 @@ sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
-sudo wget -O "/opt/gitea/gitea https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
-sudo chmod +x /opt/gitea/gitea
+sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
+sudo chmod +x /opt/gitea/gitea-$VER
+rm -f /opt/gitea/gitea
+ln -sf gitea-$VER /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
 sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl restart gitea
+sudo systemctl enable gitea
 
 echo ""
 echo "Please visit http://localhost:3000/ now to finish installing gitea"
