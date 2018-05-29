@@ -2,7 +2,7 @@
 
 Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
 
-## Linux Install Script
+# Linux Install Script
 
 You can download and run the installer script:
 
@@ -10,6 +10,8 @@ You can download and run the installer script:
 wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/install.bash
 bash install-gitea.bash
 ```
+
+## Install Manually
 
 Or manually install by reading these instructions and following along:
 
@@ -22,7 +24,7 @@ sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
-sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-linux-amd64
+sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.4.1/gitea-1.4.1-linux-amd64
 sudo chmod +x /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
@@ -32,7 +34,7 @@ sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86
 sudo systemctl restart gitea
 ```
 
-## Gitea Web Setup (post install)
+# Gitea Web Setup (post install)
 
 Once you've gitea installed and running you must choose
 which database to use, certain gitea paths, an admin user, etc.
@@ -74,6 +76,7 @@ You can find more information about customization and templates in the docs and 
 
 * https://docs.gitea.io/en-us/customizing-gitea/
 * https://github.com/go-gitea/gitea/tree/master/templates/
+
 # Troubleshooting systemd
 
 See [Troubleshooting systemd](https://git.coolaj86.com/coolaj86/service-installer.sh/src/master/README.md#troubleshooting-systemd)
