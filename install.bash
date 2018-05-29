@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VER=1.4.0
+VER=1.4.1
 
 # wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
 # or
