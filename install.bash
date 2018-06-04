@@ -32,12 +32,33 @@ sudo systemctl enable gitea
 # swapon /tmp.swap
 sudo systemctl restart gitea
 
+set +e
+my_ip=$(ifconfig | grep inet | grep Mask | grep -v ':127\\.0\\.0\\.1' | grep -v ':192\\.168'  | grep -v ':10\\.' | head -n 1 | cut -f 2 -d ':' | cut -f 1 -d ' ')
+my_ip=${my_ip:-localhost}
+set -e
+
 echo ""
-echo "Please visit http://localhost:3000/ now to finish installing gitea"
 echo ""
-echo "You may customize gitea"
-echo "    templates can be seen at https://github.com/go-gitea/gitea/tree/v$VER/templates"
-echo "    app.ini.sample can be seen at https://github.com/go-gitea/gitea/blob/v$VER/custom/conf/app.ini.sample"
+echo "###########################"
+echo "#    Time to Configure    #"
+echo "###########################"
+echo ""
+echo "Just a few more steps to complete at the setup URL:"
+echo ""
+echo "\thttp://$my_ip:3000/"
+echo ""
+echo "Future changes can be made by editing the config file:"
+echo ""
+echo "\t/opt/gitea/custom/conf/app.ini"
+echo ""
+echo ""
+echo "P.S. Would you like to customize Gitea?"
+echo ""
+echo "\tSee basic instructions at https://git.coolaj86.com/coolaj86/gitea-installer.sh/_edit/master/install.bash"
+echo ""
+echo "\tThe templates are at https://github.com/go-gitea/gitea/tree/v$VER/templates"
+echo "\tSee a sample app.ini at https://github.com/go-gitea/gitea/blob/v$VER/custom/conf/app.ini.sample"
+echo ""
 
 # sleep 5
 # swapoff /tmp.swap
