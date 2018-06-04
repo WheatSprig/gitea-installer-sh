@@ -2,6 +2,11 @@
 
 Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
 
+# Screencast
+**How to install Gitea**, and migrate one of your Microsoft Github, repos in 5 minutes.
+
+<a href="https://youtu.be/dTvTBlzKqgg"><img title="How to install Gitea" alt="a screencast of me installing gitea and migrating one of my github repos" src="https://i.imgur.com/e4CZdBu.png"></a>
+
 # Linux Install Script
 
 You can download and run the installer script:
