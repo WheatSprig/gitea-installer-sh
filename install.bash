@@ -15,6 +15,11 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
 
+  # Check if architecure is i386 and download Gitea
+if [ -n "$(uname -a | grep i386)" ]; then
+  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
+fi
+
   # Check if architecure is x86 and download Gitea
 if [ -n "$(uname -a | grep x86_64)" ]; then
   sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
