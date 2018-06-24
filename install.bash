@@ -17,7 +17,7 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
   # Check if architecure is x86 and download Gitea
 if [ -n "$(uname -a | grep x86_64)" ]; then
-  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
 fi
 
   # Check if architecure is ARMv7 and download Gitea
