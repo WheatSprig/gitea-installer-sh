@@ -14,7 +14,17 @@ sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
-sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+
+  # Check if architecure is x86 and download Gitea
+if [ -n "$(uname -a | grep x86_64)" ]; then
+  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+fi
+
+  # Check if architecure is ARMv7 and download Gitea
+if [ -n "$(uname -a | grep armv7l)" ]; then
+  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+fi
+
 sudo chmod +x /opt/gitea/gitea-$VER
 rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
