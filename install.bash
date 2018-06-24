@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VER=1.4.1
+VER=1.4.2
 
 # wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
 # or
@@ -14,7 +14,7 @@ sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
-sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
+sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
 sudo chmod +x /opt/gitea/gitea-$VER
 rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
