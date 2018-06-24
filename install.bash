@@ -20,6 +20,11 @@ if [ -n "$(uname -a | grep x86_64)" ]; then
   sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
 fi
 
+# Check if architecure is ARMv6 and download Gitea
+if [ -n "$(uname -a | grep armv6l)" ]; then
+sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-6"
+fi
+
   # Check if architecure is ARMv7 and download Gitea
 if [ -n "$(uname -a | grep armv7l)" ]; then
   sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
