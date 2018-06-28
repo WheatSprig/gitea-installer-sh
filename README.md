@@ -12,10 +12,7 @@ Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
 
 You can download and run the installer script:
 
-```bash
-wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/install.bash
-bash install-gitea.bash
-```
+`curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash`
 
 ## Install Manually
 
