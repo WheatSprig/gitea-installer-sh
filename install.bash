@@ -34,7 +34,6 @@ sudo adduser gitea --home /opt/gitea --disabled-password --gecos ''
 
 # Make some other potentially useful directories for that user/group
 sudo mkdir -p /opt/gitea/ /var/log/gitea
-sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
 # Download and install gitea
 
@@ -58,9 +57,14 @@ if [ -n "$(uname -a | grep armv7l)" ]; then
   sudo curl -fsSL -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
 fi
 
+# Setup Gitea symlink and permissions
+
 sudo chmod +x /opt/gitea/gitea-$VER
 rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
+sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
+
+
 
 # Download and install the gitea.service for systemd
 sudo curl -fsSL -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/dist/etc/systemd/system/gitea.service
