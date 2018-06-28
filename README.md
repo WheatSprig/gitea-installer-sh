@@ -29,7 +29,7 @@ sudo adduser gitea --home /opt/gitea --disabled-password --gecos ''
 sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
-# Download and install gitea
+# Download and install gitea. Replace "amd64" with "i386" for 32 bit x86 or "arm-7" for ARMv7 and "arm-6" for ARMv6.
 sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.4.1/gitea-1.4.1-linux-amd64
 sudo chmod +x /opt/gitea/gitea
 
