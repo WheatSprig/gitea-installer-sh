@@ -63,7 +63,7 @@ rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
-sudo curl -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
+sudo curl -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl enable gitea
