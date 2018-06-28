@@ -14,6 +14,8 @@ You can download and run the installer script:
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash`
 
+You can pick a specific version to install. For example, if you were nostalgic for 1.2.0, you could run `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash -s version 1.2.0`
+
 ## Install Manually
 
 Or manually install by reading these instructions and following along:

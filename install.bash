@@ -6,9 +6,28 @@ VER=$(curl --silent "https://api.github.com/repos/go-gitea/gitea/releases/latest
     sed -E 's/.*"([^"]+)".*/\1/'    |                               # Pluck JSON value
     sed 's|[v,]||g' )                                               # Remove v
 
-# wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
-# or
-# wget -O - https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash | bash
+while [[ $# -gt 0 ]]
+do
+  key="$1"
+
+  case $key in
+    -v|version)
+    VER="$2"
+    shift # past argument
+    ;;
+    *)
+    # unknown option
+    if test -z "${unknown}"
+    then
+      unknown=$1
+    else
+      echo "Unknown Option"
+      exit 1
+    fi
+    ;;
+  esac
+  shift # past argument or value
+done
 
 # Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
 sudo adduser gitea --home /opt/gitea --disabled-password --gecos ''
