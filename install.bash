@@ -39,8 +39,8 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 # Download and install gitea
 
   # Check if architecure is i386 and download Gitea
-  sudo curl -fsSL -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
 if [ -n "$(uname -a | grep i386)" ]; then
+    sudo curl -fsSL -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
 fi
 
   # Check if architecure is x86 and download Gitea
