@@ -1,6 +1,10 @@
 #!/bin/bash
 
-VER=1.4.2
+# Most of code credit for determining version is here: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c
+VER=$(curl --silent "https://api.github.com/repos/go-gitea/gitea/releases/latest" | # Get latest release from GitHub api
+    grep '"tag_name":' |                                            # Get tag line
+    sed -E 's/.*"([^"]+)".*/\1/'    |                               # Pluck JSON value
+    sed 's|[v,]||g' )                                               # Remove v
 
 # wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer/raw/master/install.bash; bash install-gitea.bash
 # or
@@ -17,22 +21,22 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
   # Check if architecure is i386 and download Gitea
 if [ -n "$(uname -a | grep i386)" ]; then
-  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
+  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
 fi
 
   # Check if architecure is x86 and download Gitea
 if [ -n "$(uname -a | grep x86_64)" ]; then
-  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
+  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
 fi
 
 # Check if architecure is ARMv6 and download Gitea
 if [ -n "$(uname -a | grep armv6l)" ]; then
-sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-6"
+sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-6"
 fi
 
   # Check if architecure is ARMv7 and download Gitea
 if [ -n "$(uname -a | grep armv7l)" ]; then
-  sudo wget -O "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
 fi
 
 sudo chmod +x /opt/gitea/gitea-$VER
@@ -40,7 +44,7 @@ rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
-sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
+sudo curl -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl enable gitea
