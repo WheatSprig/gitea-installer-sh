@@ -40,22 +40,22 @@ sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
   # Check if architecure is i386 and download Gitea
 if [ -n "$(uname -a | grep i386)" ]; then
-  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
+  sudo curl -ofsSL "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-386"
 fi
 
   # Check if architecure is x86 and download Gitea
 if [ -n "$(uname -a | grep x86_64)" ]; then
-  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
+  sudo curl -ofsSL "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-amd64"
 fi
 
 # Check if architecure is ARMv6 and download Gitea
 if [ -n "$(uname -a | grep armv6l)" ]; then
-sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-6"
+sudo curl -ofsSL "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-6"
 fi
 
   # Check if architecure is ARMv7 and download Gitea
 if [ -n "$(uname -a | grep armv7l)" ]; then
-  sudo curl -o "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
+  sudo curl -ofsSL "/opt/gitea/gitea-$VER" "https://dl.gitea.io/gitea/$VER/gitea-$VER-linux-arm-7"
 fi
 
 sudo chmod +x /opt/gitea/gitea-$VER
@@ -63,7 +63,7 @@ rm -f /opt/gitea/gitea
 ln -sf gitea-$VER /opt/gitea/gitea
 
 # Download and install the gitea.service for systemd
-sudo curl -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/dist/etc/systemd/system/gitea.service
+sudo curl -ofsSL /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/dist/etc/systemd/system/gitea.service
 
 # Start gitea
 sudo systemctl enable gitea
