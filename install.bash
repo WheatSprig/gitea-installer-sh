@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Most of code credit for determining version is here: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c
+# Most of the code credit for determining version is here: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c
 VER=$(curl --silent "https://api.github.com/repos/go-gitea/gitea/releases/latest" | # Get latest release from GitHub api
     grep '"tag_name":' |                                            # Get tag line
     sed -E 's/.*"([^"]+)".*/\1/'    |                               # Pluck JSON value

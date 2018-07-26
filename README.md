@@ -45,21 +45,21 @@ Click on "Admin Account Settings" to setup your user account and click "Install 
 If you want to install Gitea manually, you can follow these instructions:
 
 ```bash
-# Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
+### Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
 sudo adduser gitea --home /opt/gitea --disabled-password --gecos ''
 
-# Make some other potentially useful directories for that user/group
+### Make some other potentially useful directories for that user/group
 sudo mkdir -p /opt/gitea/ /var/log/gitea
 sudo chown -R gitea:gitea /opt/gitea/ /var/log/gitea
 
-# Download and install gitea. Replace "amd64" with "i386" for 32 bit x86 or "arm-7" for ARMv7 and "arm-6" for ARMv6.
+### Download and install gitea. Replace "amd64" with "i386" for 32 bit x86 or "arm-7" for ARMv7 and "arm-6" for ARMv6.
 sudo wget -O /opt/gitea/gitea https://dl.gitea.io/gitea/1.4.1/gitea-1.4.1-linux-amd64
 sudo chmod +x /opt/gitea/gitea
 
-# Download and install the gitea.service for systemd
+### Download and install the gitea.service for systemd
 sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/dist/etc/systemd/system/gitea.service
 
-# Start gitea
+### Start gitea
 sudo systemctl restart gitea
 ```
 
@@ -103,3 +103,9 @@ You can find more information about customization and templates in the docs and 
 # Troubleshooting systemd
 
 See [Troubleshooting systemd](https://git.coolaj86.com/coolaj86/service-installer.sh/src/master/README.md#troubleshooting-systemd)
+
+# Removing Gitea
+
+Run this command to uninstall Gitea: (THIS WILL REMOVE ALL DATA if you are using SQLite!)
+
+`curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/remove.bash | bash`
