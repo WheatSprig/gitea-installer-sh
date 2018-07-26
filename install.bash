@@ -63,6 +63,7 @@ fi
 sudo chmod +x /opt/gitea/gitea-$VER
 rm -f /opt/gitea/gitea
 sudo ln -sf gitea-$VER /opt/gitea/gitea
+sudo ln -sf gitea-$VER /usr/local/bin/gitea
 
 # Download and install the gitea.service for systemd
 sudo curl -fsSL -o /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/dist/etc/systemd/system/gitea.service
