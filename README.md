@@ -1,16 +1,15 @@
 # Gitea Installer
 
-Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
+Installs [Gitea](https://gitea.io) (formerly Gogs) as a systemd service
 
 ## Screencast
-**How to install Gitea**, and migrate one of your Microsoft Github, repos in 5 minutes.
+**How to install Gitea** and migrate one of your Microsoft Github repos in 5 minutes.
 
 <a href="https://youtu.be/dTvTBlzKqgg" target="_blank"><img title="How to install Gitea" alt="a screencast of me installing gitea and migrating one of my github repos" src="https://i.imgur.com/e4CZdBu.png"></a>
 
-
 # Linux Install Script
 
-You can download and run the installer script:
+You can download and run the installer script using this command:
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash`
 
@@ -18,9 +17,32 @@ You can pick a specific version to install. For example, if you were nostalgic f
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash -s version 1.2.0`
 
-## Install Manually
+# Gitea Web Setup (post install)
 
-Or manually install by reading these instructions and following along:
+Once you have gitea installed and running you must choose
+which database to use, certain gitea paths, an admin user, etc.
+
+Go to: http://localhost:3000/
+
+You should see these fields: (The following is for basic usage with this script, for more advance usage see: (https://docs.gitea.io/en-us/customizing-gitea/)[https://docs.gitea.io/en-us/customizing-gitea/])
+
+Database Type: Use SQLite3 for the database.
+Path: Leave this alone.
+Application Name: Give your Gitea server a fancy name.
+Repository Root Path: Leave this alone.
+LFS Root Path: Leave this alone.
+Run User: Leave this alone.
+Domain: Replace this with your domain name for the server.
+SSH Port: Leave this alone unless you want a custom port for SSH.
+HTTP Port: Change this if you want Gitea to serve on a different port. You don't usually need to, Gitea is usually used behind a web server.
+Application URL: Enter the full URL for your Gitea instance, like https://example.com/
+Log Path: Leave this alone.
+
+Click on "Admin Account Settings" to setup your user account and click "Install Gitea" when you are done.`
+
+## Manual Installation
+
+If you want to install Gitea manually, you can follow these instructions:
 
 ```bash
 # Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
@@ -41,12 +63,7 @@ sudo wget -O /etc/systemd/system/gitea.service https://git.coolaj86.com/coolaj86
 sudo systemctl restart gitea
 ```
 
-# Gitea Web Setup (post install)
-
-Once you've gitea installed and running you must choose
-which database to use, certain gitea paths, an admin user, etc.
-
-> http://localhost:3000/
+Then see the post-install instruction above.
 
 ## Customize Gitea
 
@@ -63,7 +80,6 @@ All overrides to the existing theme can be placed in the `custom/public` and `cu
 * Change Logo
 * Change Landing Page
 * Google Analytics
-
 
 ```
 /opt/gitea/custom/public
