@@ -2,7 +2,7 @@
 
 Installs [Gitea](https://gitea.io) (formerly gogs) as a systemd service
 
-## Linux Install Script
+# Easy Install (Linux)
 
 You can download and run the installer script:
 
@@ -10,6 +10,13 @@ You can download and run the installer script:
 wget -O install-gitea.bash https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/master/install.bash
 bash install-gitea.bash
 ```
+
+# Screencast
+
+<a href="https://www.youtube.com/watch?v=dTvTBlzKqgg" target="_blank"><img src="https://i.imgur.com/9x8iCUO.png" alt="how to install Gitea" title="Gitea Screencast"/></a>
+
+# Manual Install
+
 
 Or manually install by reading these instructions and following along:
 
