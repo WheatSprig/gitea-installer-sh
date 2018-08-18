@@ -17,3 +17,4 @@ if test ! -d /opt/gitea
    echo "Gitea has been completely removed."
 else
   echo "Gitea has not been completely removed. File an issue here: https://git.coolaj86.com/coolaj86/gitea-installer.sh/issues/new"
+fi
