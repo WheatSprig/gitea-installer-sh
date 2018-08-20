@@ -78,8 +78,10 @@ All overrides to the existing theme can be placed in the `custom/public` and `cu
 /opt/gitea/custom/public/img/gitea-sm.png    # 880x880 logo on landing page
 
 /opt/gitea/custom/templates/home.tmpl        # The landing page
-/opt/gitea/custom/templates/base/head.tmpl   # Google Analytics
+/opt/gitea/custom/templates/base/head.tmpl   # Google Analytics, Login with Github
 ```
+
+* [Login with Github](https://git.coolaj86.com/coolaj86/gitea-installer.sh/src/tag/v1.0.0/custom/templates/base/head.tmpl#L277)
 
 For many items, such as the logo, you can simply right-click "inspect" to discover the location. For example, the small logo is `/img/gitea-sm.png` or `/opt/gitea/custom/public/img/gitea-sm.png`.
 
