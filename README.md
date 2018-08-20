@@ -4,22 +4,17 @@ Installs [Gitea](https://gitea.io) (formerly Gogs) as a systemd service
 
 # Easy Install (Linux)
 
-<a href="https://youtu.be/dTvTBlzKqgg" target="_blank"><img title="How to install Gitea" alt="a screencast of me installing gitea and migrating one of my github repos" src="https://i.imgur.com/e4CZdBu.png"></a>
-
-# Linux Install Script
-
 You can download and run the installer script using this command:
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash`
 
+<a href="https://youtu.be/dTvTBlzKqgg" target="_blank"><img title="How to install Gitea" alt="a screencast of me installing gitea and migrating one of my github repos" src="https://i.imgur.com/e4CZdBu.png"></a>
+
+## Specific Versions
+
 You can pick a specific version to install. For example, if you were nostalgic for 1.2.0, you could run:
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash -s version 1.2.0`
-
-# Screencast
-
-<a href="https://www.youtube.com/watch?v=dTvTBlzKqgg" target="_blank"><img src="https://i.imgur.com/9x8iCUO.png" alt="how to install Gitea" title="Gitea Screencast"/></a>
-
 
 # After Installing
 
