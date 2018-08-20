@@ -54,6 +54,12 @@ which database to use, certain gitea paths, an admin user, etc.
 https://github.com/go-gitea/gitea/tree/master/custom/conf/app.ini.sample
 ```
 
+Once a reverse proxy is set up you can change the `HTTP_ADDR` from the default (world accessible) to localhost-only.
+
+```
+HTTP_ADDR        = localhost
+```
+
 ## Customize Gitea Theme
 
 All overrides to the existing theme can be placed in the `custom/public` and `custom/templates` folders.
