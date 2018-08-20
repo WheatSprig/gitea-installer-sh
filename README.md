@@ -2,8 +2,7 @@
 
 Installs [Gitea](https://gitea.io) (formerly Gogs) as a systemd service
 
-## Screencast
-**How to install Gitea** and migrate one of your Microsoft Github repos in 5 minutes.
+# Easy Install (Linux)
 
 <a href="https://youtu.be/dTvTBlzKqgg" target="_blank"><img title="How to install Gitea" alt="a screencast of me installing gitea and migrating one of my github repos" src="https://i.imgur.com/e4CZdBu.png"></a>
 
@@ -17,7 +16,12 @@ You can pick a specific version to install. For example, if you were nostalgic f
 
 `curl -fsSL https://git.coolaj86.com/coolaj86/gitea-installer.sh/raw/branch/master/install.bash | bash -s version 1.2.0`
 
-# Gitea Web Setup (post install)
+# Screencast
+
+<a href="https://www.youtube.com/watch?v=dTvTBlzKqgg" target="_blank"><img src="https://i.imgur.com/9x8iCUO.png" alt="how to install Gitea" title="Gitea Screencast"/></a>
+
+
+# After Installing
 
 Once you have gitea installed and running you must choose
 which database to use, certain gitea paths, an admin user, etc.
@@ -40,9 +44,9 @@ Log Path: Leave this alone.
 
 Click on "Admin Account Settings" to setup your user account and click "Install Gitea" when you are done.`
 
-## Manual Installation
+## Manual Install
 
-If you want to install Gitea manually, you can follow these instructions:
+Or manually install by reading these instructions and following along:
 
 ```bash
 ### Create a 'gitea' user and group with the home /opt/gitea, no password (because it's a system user) and no GECOS
@@ -73,6 +77,12 @@ Then see the post-install instruction above.
 https://github.com/go-gitea/gitea/tree/master/custom/conf/app.ini.sample
 ```
 
+Once a reverse proxy is set up you can change the `HTTP_ADDR` from the default (world accessible) to localhost-only.
+
+```
+HTTP_ADDR        = localhost
+```
+
 ## Customize Gitea Theme
 
 All overrides to the existing theme can be placed in the `custom/public` and `custom/templates` folders.
@@ -90,8 +100,10 @@ All overrides to the existing theme can be placed in the `custom/public` and `cu
 /opt/gitea/custom/public/img/gitea-sm.png    # 880x880 logo on landing page
 
 /opt/gitea/custom/templates/home.tmpl        # The landing page
-/opt/gitea/custom/templates/base/head.tmpl   # Google Analytics
+/opt/gitea/custom/templates/base/head.tmpl   # Google Analytics, Login with Github
 ```
+
+* [Login with Github](https://git.coolaj86.com/coolaj86/gitea-installer.sh/src/tag/v1.0.0/custom/templates/base/head.tmpl#L277)
 
 For many items, such as the logo, you can simply right-click "inspect" to discover the location. For example, the small logo is `/img/gitea-sm.png` or `/opt/gitea/custom/public/img/gitea-sm.png`.
 
