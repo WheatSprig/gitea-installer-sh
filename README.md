@@ -23,21 +23,31 @@ which database to use, certain gitea paths, an admin user, etc.
 
 Go to: http://localhost:3000/
 
-You should see these fields: (The following is for basic usage with this script, for more advance usage see: (https://docs.gitea.io/en-us/customizing-gitea/)[https://docs.gitea.io/en-us/customizing-gitea/])
+You should see these fields: (The following is for basic usage with this script, for more advance usage see: [https://docs.gitea.io/en-us/customizing-gitea/](https://docs.gitea.io/en-us/customizing-gitea/))
 
-Database Type: Use SQLite3 for the database.
-Path: Leave this alone.
-Application Name: Give your Gitea server a fancy name.
-Repository Root Path: Leave this alone.
-LFS Root Path: Leave this alone.
-Run User: Leave this alone.
-Domain: Replace this with your domain name for the server.
-SSH Port: Leave this alone unless you want a custom port for SSH.
-HTTP Port: Change this if you want Gitea to serve on a different port. You don't usually need to, Gitea is usually used behind a web server.
-Application URL: Enter the full URL for your Gitea instance, like https://example.com/
-Log Path: Leave this alone.
+`Database Type:` Use SQLite3 for the database.
 
-Click on "Admin Account Settings" to setup your user account and click "Install Gitea" when you are done.`
+`Path:` Leave this alone.
+
+`Application Name:` Give your Gitea server a fancy name.
+
+`Repository Root Path:` Leave this alone.
+
+`LFS Root Path:` Leave this alone.
+
+`Run User:` Leave this alone.
+
+`Domain:` Replace this with your domain name for the server.
+
+`SSH Port:` Leave this alone unless you want a custom port for SSH.
+
+`HTTP Port:` Change this if you want Gitea to serve on a different port. You don't usually need to, Gitea is usually used behind a web server.
+
+`Application URL:` Enter the full URL for your Gitea instance, like https://example.com/
+
+`Log Path:` Leave this alone.
+
+Click on "Admin Account Settings" to setup your user account and click "Install Gitea" when you are done.
 
 ## Manual Install
 
