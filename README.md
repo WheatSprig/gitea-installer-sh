@@ -23,7 +23,9 @@ which database to use, certain gitea paths, an admin user, etc.
 
 Go to: http://localhost:3000/
 
-You should see these fields: (The following is for basic usage with this script, for more advance usage see: [https://docs.gitea.io/en-us/customizing-gitea/](https://docs.gitea.io/en-us/customizing-gitea/))
+You should see these fields:
+
+*The following is for basic usage with this script, for more advance usage see: [https://docs.gitea.io/en-us/customizing-gitea/](https://docs.gitea.io/en-us/customizing-gitea/)*
 
 `Database Type:` Use SQLite3 for the database.
 
